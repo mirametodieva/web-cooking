@@ -1,0 +1,14 @@
+@import '../colors.scss';
+
+.mat-snack-bar-container {
+  background-color: $color-rose;
+  color: $color-white;
+  box-shadow: 0 10px 10px -6px $color-black-transparent-4;
+  border-radius: 10px;
+
+  .mat-simple-snackbar-action button{
+    background-color: $color-cream;
+    color: $color-rose;
+    margin: 5px;
+  }
+}

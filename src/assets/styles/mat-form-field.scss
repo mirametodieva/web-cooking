@@ -1,0 +1,38 @@
+@import '../colors.scss';
+
+.mat-form-field {
+  background: transparent;
+  .mat-form-field-flex{
+    background-color: $color-rose-transparent-3;
+  }
+}
+
+input.mat-input-element{
+  margin-left: 10px;
+}
+
+.mat-form-field-label-wrapper{
+  margin: 2px 10px 0 10px;
+}
+
+.mat-select-value{
+  margin-left: 10px;
+}
+
+.mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option{
+  background-color: $color-rose;
+  &:hover{
+    background: $color-cream;
+  }
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+    background: $color-cream;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate{
+  background-color: $color-rose;
+}
+
+.mat-pseudo-checkbox::after{
+  color: $color-white;
+}

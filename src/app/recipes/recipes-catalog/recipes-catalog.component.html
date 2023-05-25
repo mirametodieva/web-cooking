@@ -1,0 +1,35 @@
+<ng-container *ngIf="recipes$ | async as recipes">
+  <div class="px-5">
+    <div class="p-5">
+      <app-recipes-filters
+        *ngIf="!isFavPage && !isAdmin"
+        [recipes]="recipes"
+        (filter)="filterRecipes($event, recipes)"
+        (sortAbc)="sortRecipes($event, recipes)"
+      ></app-recipes-filters>
+    </div>
+    <h1 *ngIf="isFavPage">
+      {{
+        favoriteRecipes.length
+          ? "All your favorite recipes:"
+          : "Mark a recipe as your favorite and you will be able to find it more faster and easier!"
+      }}
+    </h1>
+    <div class="py-3 px-5">
+      <div class="row" [ngClass]="{'recipes-container': isFavPage}">
+        <ng-container *ngFor="let recipe of filteredRecipes">
+          <app-recipe
+            *ngIf="isAdmin || recipe.approved"
+            class="col-3"
+            [recipe]="recipe"
+            [favRecipes]="favoriteRecipes"
+            [isLogged]="isLogged"
+            [isAdmin]="isAdmin"
+            (addToFav)="addToFav(recipe['_id'])"
+            (approveDeleteRecipe)="approveDeleteRecipe($event)"
+          ></app-recipe>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,26 @@
+@import '../../../assets/colors.scss';
+
+.auth-form-container{
+  height: calc(100vh - 83px);
+  background-image: url('../../../assets/images/donuts-2013344.svg');
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.auth-form{
+  background-color: $color-cream;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px $color-black-transparent-4;
+}
+
+.auth-title{
+  color: $color-white;
+  background-color: $color-rose;
+}
+
+.auth-link{
+  cursor: pointer;
+  color: $color-rose;
+  font-weight: bold;
+  text-decoration: underline;
+}

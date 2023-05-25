@@ -1,0 +1,43 @@
+@import '../colors.scss';
+
+.rose-button{
+  background-color: $color-rose-water;
+  color: $color-white;
+  &:hover{
+    background-color: $color-rose;
+  }
+}
+
+.pink-button{
+  background-color: $color-rose;
+  color: $color-white;
+}
+
+
+.cream-button{
+  background-color: $color-cream;
+  color: $color-rose;
+}
+
+.clear-button{
+  background-color: $color-mint;
+  color: $color-black;
+}
+
+.green-button{
+  background-color: $color-green-apple;
+  color: $color-white;
+  min-width: 160px !important;
+  &:hover{
+    background-color: $color-dark-green-apple;
+  }
+}
+
+.red-button{
+  background-color: $color-solomon;
+  color: $color-white;
+  min-width: 160px !important;
+  &:hover{
+    background-color: $color-dark-solomon;
+  }
+}
