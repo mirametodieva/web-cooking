@@ -1,0 +1,34 @@
+@import "../../../assets/colors.scss";
+
+.main-container {
+  height: 89vh;
+  background-image: url("../../../assets/images/blur.png");
+  background-position: left;
+  background-size: contain;
+}
+
+::ng-deep {
+  .form-container {
+    background-color: $color-white;
+    border: 2px solid $color-red;
+    border-radius: 10px;
+    max-width: 600px;
+
+    .mat-form-field .mat-form-field-flex {
+      background-color: transparent;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      border-radius: 10px;
+      background-color: $color-carrot-transparent-4;
+    }
+
+    .mat-form-field-label {
+      color: $color-dark;
+    }
+
+    .mat-select-value{
+      color: $color-black;
+    }
+  }
+}

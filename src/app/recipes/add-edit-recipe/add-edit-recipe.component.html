@@ -1,0 +1,52 @@
+<form
+  [formGroup]="recipeForm"
+  class="main-container d-flex justify-content-center align-items-center"
+>
+  <div class="p-5 form-container">
+    <h2 class="text-danger text-center fw-bold pb-4">
+      Show us your recipe! Create it quickly and easy!
+    </h2>
+    <div class="px-5">
+      <div class="row">
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Title: </mat-label>
+          <input formControlName="title" matInput placeholder="Title" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Image: </mat-label>
+          <input formControlName="image" matInput placeholder="Image" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Ingredients </mat-label>
+          <input formControlName="ingredients" matInput placeholder="Ingredients" />
+          <mat-hint>Please, separate the ingredients with commas!</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Categories: </mat-label>
+          <mat-select formControlName="categories" multiple>
+            <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <div class="text-end my-3">
+        <mat-error *ngIf="recipeForm.get('title')?.touched && recipeForm.get('title')?.hasError('required')" class="text-danger">
+          Please, enter a recipe title!
+        </mat-error>
+        <mat-error *ngIf="recipeForm.get('image')?.touched && recipeForm.get('image')?.hasError('required')" class="text-danger">
+          Please, enter a recipe image!
+        </mat-error>
+        <mat-error *ngIf="recipeForm.get('ingredients')?.touched && recipeForm.get('ingredients')?.hasError('required')" class="text-danger">
+          Please, enter all recipe ingredients
+        </mat-error>
+        <mat-error *ngIf="recipeForm.get('categories')?.touched && recipeForm.get('categories')?.hasError('required')" class="text-danger">
+          Please select the categories the recipe belongs to!
+        </mat-error>
+      </div>
+      <button mat-raised-button class="green-button w-100" (click)="addRecipe()">
+        Create a recipe
+      </button>
+    </div>
+  </div>
+</form>

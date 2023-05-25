@@ -1,0 +1,45 @@
+<mat-card class="recipe-card m-4">
+  <mat-card-header>
+    <div class="text-center w-100">{{ recipe.categories.join(" | ") }}</div>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="recipe.image"
+    [alt]="'Photo of ' + recipe.title"
+    [title]="'Photo of ' + recipe.title"
+  />
+  <mat-card-content>
+    <h1 class="recipe-title">{{ recipe.title }}</h1>
+    <p class="recipe-ingredients">{{ recipe.ingredients.join(", ") }}</p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="!isAdmin && isLogged">
+    <button mat-button (click)="addToFavorites()" class="recipe-button w-100">
+      <ng-container *ngIf="isFav; else addFavButtonContent">
+        <mat-icon class="fav-recipe-icon">favorite</mat-icon>
+        Remove from favorites
+      </ng-container>
+      <ng-template #addFavButtonContent>
+        <mat-icon>favorite_border</mat-icon>
+        Add to favorites
+      </ng-template>
+    </button>
+  </mat-card-actions>
+  <mat-card-actions *ngIf="isAdmin" class="d-flex justify-content-between">
+    <button
+      *ngIf="!recipe.approved"
+      mat-button
+      (click)="approveOrDeleteRecipe(true)"
+      class="green-button w-100"
+    >
+      Approve
+    </button>
+    <button
+      *ngIf="recipe.approved"
+      mat-button
+      class="red-button w-100"
+      (click)="approveOrDeleteRecipe(false)"
+    >
+      Disapprove
+    </button>
+  </mat-card-actions>
+</mat-card>

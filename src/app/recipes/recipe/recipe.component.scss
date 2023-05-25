@@ -1,0 +1,39 @@
+@import '../../../assets/colors.scss';
+
+.mat-card{
+  background-color: transparent;
+  color: $color-black;
+  box-shadow: none;
+}
+
+.recipe-card{
+  &:hover{
+    cursor: pointer;
+    .recipe-title{
+      background-color: $color-rose;
+      color: $color-white;
+    }
+    img{
+      transform: rotate(-10deg) scale(1.02);
+    }
+  }
+}
+
+.recipe-title{
+  color: $color-rose;
+  font-weight: 900;
+  background-color: $color-grey;
+  border-bottom: 1px solid $color-rose;
+  border-top: 1px solid $color-rose;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.fav-recipe-icon{
+  color: $color-red;
+}
+
+.recipe-button{
+  background-color: $color-cream;
+  color: $color-rose;
+}

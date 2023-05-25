@@ -1,0 +1,50 @@
+@import '../../../assets/colors.scss';
+
+.header {
+  background-color: $color-cream;
+  box-shadow: 3px 3px 10px $color-black-transparent-4;
+  img {
+    max-height: 50px;
+  }
+}
+
+.logo {
+  cursor: pointer;
+  max-height: 80px !important;
+}
+
+.title {
+  margin: 0;
+  line-height: 90px;
+  font-size: 2.5rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+.nav-list {
+  list-style: none;
+  li {
+    padding-right: 15px;
+    font-size: 1.1rem;
+    border-right: 1px solid $color-black;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.link {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-family: 'Handlee', cursive;
+  &:hover {
+    background-color: $color-rose-transparent-3;
+    color: $color-white !important;
+    cursor: pointer;
+  }
+}
+
+.active {
+  background-color: $color-rose;
+  color: $color-white !important;
+}

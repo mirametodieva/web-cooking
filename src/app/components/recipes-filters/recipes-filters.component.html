@@ -1,0 +1,48 @@
+<form [formGroup]="filtersForm" class="filters-wrapper py-3 px-5">
+  <div class="row align-items-center">
+    <div class="col-2">
+      <button mat-raised-button class="cream-button" (click)="sort()">
+        Sort alphabetically
+      </button>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Search by recipe title</mat-label>
+        <input (change)="submitForm()" matInput placeholder="Search by recipe title" type="text" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div class="col-2">
+      <mat-form-field appearance="fill" class="w-100 ">
+        <mat-label>Search by recipe category</mat-label>
+        <mat-select formControlName="categories" (selectionChange)="submitForm()">
+          <mat-option [value]="null">---</mat-option>
+          <mat-option
+            *ngFor="let category of categoriesOptions"
+            [value]="category"
+          >
+            {{category}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-2">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Search by recipe ingredient</mat-label>
+        <mat-select formControlName="ingredients" (selectionChange)="submitForm()">
+          <mat-option [value]="null">---</mat-option>
+          <mat-option
+            *ngFor="let ingredient of ingredientsOptions"
+            [value]="ingredient"
+          >
+            {{ingredient}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div *ngIf="filtersForm.dirty || isSortAbc" class="d-flex justify-content-end px-3">
+    <button mat-raised-button class="clear-button" (click)="resetFilters()">
+      Clear
+    </button>
+  </div>
+</form>
