@@ -27,18 +27,22 @@
         </li>
       </ul>
     </nav>
-    <div
-      class="col-4 d-flex justify-content-end align-items-center"
-      *ngIf="isLogged$ | async as isLogged"
-    >
-      <button
-        *ngIf="isLogged"
-        mat-raised-button
-        class="rose-button"
-        (click)="logout()"
-      >
-        Logout
-      </button>
+    <div class="col-4 d-flex justify-content-end align-items-center">
+      <div *ngIf="isLogged$ | async as isLogged; else login">
+        <button
+          *ngIf="isLogged"
+          mat-raised-button
+          class="rose-button"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+      </div>
+      <ng-template #login>
+        <button mat-raised-button class="rose-button" routerLink="login">
+          Login
+        </button>
+      </ng-template>
     </div>
   </div>
 </div>

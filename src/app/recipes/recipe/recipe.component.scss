@@ -37,3 +37,12 @@
   background-color: $color-cream;
   color: $color-rose;
 }
+
+.categories-container{
+  z-index: 100;
+  background-color: $color-white;
+}
+
+.image-container{
+  z-index: 0;
+}

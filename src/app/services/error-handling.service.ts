@@ -19,7 +19,7 @@ export class ErrorHandlingService {
     this._snackBar.open(error.error, 'close', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-      // duration: 3000,
+      duration: 3000,
     });
   }
 }

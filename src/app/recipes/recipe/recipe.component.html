@@ -1,9 +1,10 @@
 <mat-card class="recipe-card m-4">
   <mat-card-header>
-    <div class="text-center w-100">{{ recipe.categories.join(" | ") }}</div>
+    <div class="categories-container text-center w-100">{{ recipe.categories.join(" | ") }}</div>
   </mat-card-header>
   <img
     mat-card-image
+    class="image-container"
     [src]="recipe.image"
     [alt]="'Photo of ' + recipe.title"
     [title]="'Photo of ' + recipe.title"
