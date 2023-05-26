@@ -78,7 +78,7 @@ export class RecipesCatalogComponent implements OnInit, OnDestroy {
         recipe.ingredients.some((ingredient) => ingredient === ingredients)
       );
     }
-    this.filteredRecipes = clonedRecipes;
+    this.filteredRecipes = clonedRecipes.reverse();
   }
 
   sortRecipes(sortAbc: boolean, recipes: Recipe[]): void {
